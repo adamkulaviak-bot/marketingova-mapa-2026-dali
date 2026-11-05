@@ -1,0 +1,325 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Leaflet Popup Styling */
+.dark .leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid #334155;
+  background: #111827 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark .leaflet-popup-tip {
+  background: #111827 !important;
+}
+
+/* Light mode Leaflet popup */
+html:not(.dark) .leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.18), 0 8px 10px -6px rgba(15, 23, 42, 0.1) !important;
+  border: 1px solid #cbd5e1;
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .leaflet-popup-tip {
+  background: #ffffff !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+.station-wide-popup .leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+.leaflet-popup-close-button {
+  top: 10px !important;
+  right: 10px !important;
+  width: 24px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  color: #64748b !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+  z-index: 50 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #0f172a !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.dark .leaflet-popup-close-button {
+  color: #94a3b8 !important;
+}
+
+.dark .leaflet-popup-close-button:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Custom Scrollbars */
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Explicit high-visibility scrollbar for standalone print container */
+#standalone-print-container {
+  scrollbar-width: auto !important;
+  scrollbar-color: #64748b #e2e8f0 !important;
+}
+#standalone-print-container::-webkit-scrollbar {
+  width: 16px !important;
+}
+#standalone-print-container::-webkit-scrollbar-track {
+  background: #e2e8f0 !important;
+}
+#standalone-print-container::-webkit-scrollbar-thumb {
+  background: #64748b !important;
+  border-radius: 8px !important;
+  border: 3px solid #e2e8f0 !important;
+}
+#standalone-print-container::-webkit-scrollbar-thumb:hover {
+  background: #dc2626 !important;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.dali-marker-wrapper {
+  position: relative;
+  width: 32px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: 16px 39px;
+}
+
+.dali-marker-wrapper:hover {
+  transform: scale(1.22);
+  z-index: 9999 !important;
+}
+
+.dali-marker-selected {
+  transform: scale(1.28);
+  filter: drop-shadow(0 0 10px rgba(225, 29, 35, 0.85));
+  z-index: 9998 !important;
+}
+
+.dali-badge-pulse {
+  animation: pulse-badge 1.5s infinite;
+}
+
+@keyframes pulse-badge {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 5px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* ========================================================
+   LEAFLET TILE SEAM & WHITE STRIPES ELIMINATION
+   ======================================================== */
+
+.leaflet-container {
+  background-color: #f8fafc !important;
+  outline: none !important;
+}
+
+.dark .leaflet-container {
+  background-color: #0b0e14 !important;
+}
+
+.leaflet-container.theme-dark {
+  background-color: #07090e !important;
+}
+
+.leaflet-container.theme-light {
+  background-color: #e2e8f0 !important;
+}
+
+.leaflet-container.theme-standard {
+  background-color: #f2efe9 !important;
+}
+
+.leaflet-tile-pane,
+.leaflet-tile-container {
+  background-color: transparent !important;
+}
+
+/* Clean seamless tile rendering: preserve Leaflet inline positioning and dimensions */
+.leaflet-container .leaflet-tile,
+.leaflet-tile-container img.leaflet-tile {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.leaflet-overlay-pane svg {
+  shape-rendering: geometricPrecision;
+}
+
+.map-tiles-clean {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Svetlá - šedá (Light - Grey): Pure elegant grayscale with clean roads and high typography legibility */
+.map-tiles-light-gray {
+  filter: grayscale(100%) brightness(104%) contrast(90%) !important;
+  opacity: 1 !important;
+}
+
+/* Tmavá - čierna (Dark - Black): Deep pitch black night basemap with high-contrast white roads and text */
+.map-tiles-dark-black,
+.map-tiles-dark {
+  filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(120%) grayscale(25%) !important;
+  opacity: 1 !important;
+}
+
+/* ========================================================
+   PRINT LAYOUT & PRINT OPTIMIZATION (@media print)
+   ======================================================== */
+@media print {
+  @page {
+    size: auto;
+    margin: 6mm;
+  }
+
+  body, html, #root {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide regular UI elements when printing */
+  #app-header,
+  #sidebar-panel,
+  #map-wrapper,
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Make sure modal overlays do not block or darken */
+  .print-modal-overlay {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    z-index: auto !important;
+  }
+
+  .print-modal-card {
+    position: static !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .print-modal-card > div {
+    overflow: visible !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .print-modal-sidebar,
+  .print-modal-header,
+  .print-modal-tabs {
+    display: none !important;
+  }
+
+  /* Printable Sheet Root Container */
+  #print-sheet-root {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure map preview inside print sheet is visible and properly sized */
+  #print-sheet-root .leaflet-container {
+    background: #ffffff !important;
+    border: 1px solid #94a3b8 !important;
+  }
+
+  .print-page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Remove text shadow from markers and boxes in print */
+  #print-sheet-root * {
+    text-shadow: none !important;
+  }
+}
+

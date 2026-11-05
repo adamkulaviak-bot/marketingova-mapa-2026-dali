@@ -1,0 +1,8 @@
+{
+  "name": "29102026 DEMO mapa -DALIOIL 29102026",
+  "description": "Interaktívna marketingová mapa siete DALIOIL s ohraničením územia Slovenska, správou reklamných plôch (OOH/DOOH), obsadenosťou a kontaktmi na regionálnych zástupcov.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
